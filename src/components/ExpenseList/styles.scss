@@ -1,0 +1,42 @@
+.expense-list {
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.expense-list__category {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1080px;
+
+  &-text {
+    font-family: "Mazzard";
+    text-align: center;
+    flex: 1;
+    font-size: 12px;
+    font-weight: 500;
+    color: #677b8f;
+  }
+
+  &-line {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    width: 1040px;
+    height: 1px;
+    border: none;
+    background-color: #ccd3da;
+  }
+}
+
+@media (max-width: 780px) {
+  .expense-list {
+    &__category {
+      display: none;
+    }
+  }
+}

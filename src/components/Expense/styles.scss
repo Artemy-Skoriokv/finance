@@ -1,0 +1,103 @@
+.expense {
+  width: 1080px;
+
+  &__item {
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  &__category,
+  &__date,
+  &__sum {
+    font-family: "Mazzard";
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  &__adaptiv {
+    display: flex;
+    gap: 179px;
+  }
+
+  &__category {
+    color: #92278f;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__line {
+    margin-bottom: 20px;
+    height: 1px;
+    border: none;
+    background-color: #ccd3da;
+  }
+}
+
+.expense-edit,
+.expense-delete {
+  color: #92278f;
+  width: 40px;
+  height: 40px;
+  background-color: #ccd3da;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  .expense {
+    width: 100%;
+
+    &__list {
+      padding-right: 30px;
+    }
+
+    &__line {
+      display: none;
+    }
+
+    &__adaptiv,
+    &__item {
+      gap: 95px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .expense {
+    &__item {
+      gap: 60px;
+    }
+
+    &__adaptiv {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__list {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    &__item {
+      padding: 15px 20px;
+    }
+
+    &__adaptiv {
+      display: grid;
+      flex-grow: 1;
+      gap: 0;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.header {
+  max-width: 1440px;
+  height: 121px;
+  margin: 0 auto;
+
+  &__logotyp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin-left: 80px;
+  }
+
+  &__line {
+    width: 1px;
+    height: 24px;
+    background-color: #ccd3da;
+    margin-top: 48px;
+  }
+
+  &__title {
+    font-family: "Mazzard";
+    font-size: 50px;
+    font-weight: 500;
+    margin-top: 29px;
+  }
+
+  &__images {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.line {
+  height: 1px;
+  border: none;
+  background-color: #ccd3da;
+  max-width: 100%;
+}
+
+@media (max-width: 780px) {
+  .header {
+    &__logotyp {
+      gap: 20px;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    &__logotyp {
+      margin-left: 15px;
+      gap: 15px;
+    }
+
+    &__images {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__line {
+      margin-top: 24px;
+    }
+  }
+}

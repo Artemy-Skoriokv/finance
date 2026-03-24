@@ -1,0 +1,117 @@
+.editing-form {
+  width: 1080px;
+
+  &__general {
+    width: 1040px;
+    display: flex;
+    background-color: #ffffff;
+    align-items: center;
+    height: 104px;
+    margin-left: 40px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  &__block-category,
+  &__block {
+    padding: 0 40px;
+    padding-top: 20px;
+  }
+
+  &__category,
+  &__date,
+  &__price {
+    font-family: "Mazzard";
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    border: none;
+    width: 200px;
+  }
+
+  &__edit {
+    display: flex;
+    gap: 10px;
+    margin-left: 50px;
+  }
+
+  &__line {
+    height: 1px;
+    border: none;
+    background-color: #ccd3da;
+  }
+
+  &__line-top {
+    margin-left: 40px;
+    height: 1px;
+    border: none;
+    background-color: #ccd3da;
+  }
+
+  &__error {
+    font-size: 12px;
+    font-weight: 400;
+    color: #ed1c24;
+  }
+
+  &__button {
+    color: #92278f;
+    width: 40px;
+    height: 40px;
+    background-color: #ccd3da;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__images-check {
+    position: relative;
+    right: 5px;
+  }
+}
+
+@media (max-width: 780px) {
+  .editing-form {
+    width: 684px;
+
+    &__general {
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    &__block {
+      padding: 0;
+      margin-left: 15px;
+      width: 170px;
+    }
+
+    &__edit {
+      margin-left: 15px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .editing-form {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__block-category {
+      width: 360px;
+    }
+
+    &__general {
+      width: 400px;
+      height: 281px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 15px;
+      justify-content: center;
+    }
+
+    &__line-top {
+      display: none;
+    }
+  }
+}
