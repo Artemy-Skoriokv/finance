@@ -2,7 +2,7 @@ import pencil from "../../images/pencil.png";
 import basket from "../../images/basket.png";
 import "./styles.scss";
 
-const Expense = ({ expense, openEditingForm, removeExpense }) => {
+const Expense = ({ expense, openEditingForm }) => {
   return (
     <div className="expense">
       <ul className="expense__list">
@@ -21,11 +21,7 @@ const Expense = ({ expense, openEditingForm, removeExpense }) => {
             >
               <img className="expense-edit__image" src={pencil} alt="pencil" />
             </button>
-            <button
-              type="button"
-              className="expense-delete"
-              onClick={() => removeExpense(expense.id)}
-            >
+            <button type="button" className="expense-delete">
               <img
                 className="expense-delete__images"
                 src={basket}

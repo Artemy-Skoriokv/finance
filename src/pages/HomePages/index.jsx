@@ -196,11 +196,6 @@ const HomePages = () => {
     cancelEditingExpense();
   };
 
-  const removeExpense = (id) => {
-    const updatedExpenses = expenses.filter((expense) => expense.id !== id);
-    setExpenses(updatedExpenses);
-  };
-
   return (
     <div className="home">
       <Header />
@@ -221,7 +216,6 @@ const HomePages = () => {
           cancelEditingExpense={cancelEditingExpense}
           handleChangeEditingForm={handleChangeEditingForm}
           validateEditingForm={validateEditingForm}
-          removeExpense={removeExpense}
         />
       </main>
     </div>

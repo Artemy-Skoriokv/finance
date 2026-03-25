@@ -11,7 +11,6 @@ const ExpenseList = ({
   handleChangeEditingForm,
   openEditingForm,
   idEditedExpense,
-  removeExpense,
 }) => {
   return (
     <div className="expense-list">
@@ -33,11 +32,7 @@ const ExpenseList = ({
                 cancelEditingExpense={cancelEditingExpense}
               />
             ) : (
-              <Expense
-                expense={expense}
-                openEditingForm={openEditingForm}
-                removeExpense={removeExpense}
-              />
+              <Expense expense={expense} openEditingForm={openEditingForm} />
             )}
           </div>
         ))}
