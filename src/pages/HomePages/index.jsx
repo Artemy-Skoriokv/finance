@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import ExpenseList from "../../components/ExpenseList";
 import Header from "../../components/Header";
 import ExpenseTotal from "../../components/ExpenseTotal";
-import AddForm from "../../components/ExpenseForm";
+import AddForm from "../../components/AddForm/index.jsx";
 import formatDate from "../../helpers/formatDate.js";
 import initialExpenses from "../../constants.js";
 import "./styles.scss";
