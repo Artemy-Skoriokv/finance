@@ -1,5 +1,5 @@
 import Expense from "../Expense";
-import EditingForm from "../AddForm";
+import EditingForm from "../EditingForm";
 import "./styles.scss";
 
 const ExpenseList = ({

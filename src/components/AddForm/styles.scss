@@ -1,117 +1,145 @@
-.editing-form {
-  width: 1080px;
+.add-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
 
-  &__general {
-    width: 1040px;
+  &__conteiner {
     display: flex;
+    justify-content: center;
+  }
+
+  &__record {
     background-color: #ffffff;
-    align-items: center;
-    height: 104px;
-    margin-left: 40px;
-    border-radius: 8px;
-    margin-top: 20px;
-  }
-
-  &__block-category,
-  &__block {
-    padding: 0 40px;
-    padding-top: 20px;
-  }
-
-  &__category,
-  &__date,
-  &__price {
-    font-family: "Mazzard";
-    font-size: 18px;
-    font-weight: 500;
-    color: #333;
-    border: none;
-    width: 200px;
-  }
-
-  &__edit {
+    width: 1080px;
+    height: 110px;
+    border-radius: 10px;
     display: flex;
-    gap: 10px;
-    margin-left: 50px;
-  }
-
-  &__line {
-    height: 1px;
-    border: none;
-    background-color: #ccd3da;
-  }
-
-  &__line-top {
+    align-items: center;
+    justify-content: center;
+    gap: 97px;
     margin-left: 40px;
-    height: 1px;
+  }
+
+  &__record-block {
+    position: relative;
+    width: 333px;
+    height: 60px;
+  }
+
+  &__record-text {
     border: none;
-    background-color: #ccd3da;
+    font-size: 16px;
+    font-weight: 500;
+    color: #677b8f;
+    width: 100%;
+    padding: 15px 0;
   }
 
-  &__error {
-    font-size: 12px;
-    font-weight: 400;
-    color: #ed1c24;
+  &__record-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ccd3da;
+    border: none;
+    margin: 0;
   }
 
-  &__button {
-    color: #92278f;
-    width: 40px;
-    height: 40px;
+  &__record-button {
+    width: 180px;
+    height: 56px;
     background-color: #ccd3da;
-    border-radius: 50%;
+    color: #677b8f;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 28px;
     border: none;
     cursor: pointer;
   }
 
-  &__images-check {
+  &__error-message {
+    font-weight: 400;
+    font-size: 12px;
+    color: #ed1c24;
     position: relative;
-    right: 5px;
+    top: 10px;
   }
 }
 
 @media (max-width: 780px) {
-  .editing-form {
-    width: 684px;
+  .add-form {
+    margin-bottom: 100px;
 
-    &__general {
+    &__record-record {
       width: 100%;
-      margin-left: 0px;
+      height: auto;
+      margin-top: 30px;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: transparent;
+      justify-content: center;
+      gap: 0;
     }
 
-    &__block {
-      padding: 0;
-      margin-left: 15px;
-      width: 170px;
+    &__record {
+      flex-wrap: wrap;
+      margin: 0;
+      gap: 20px;
+      height: 60px;
     }
 
-    &__edit {
-      margin-left: 15px;
+    &__record-text {
+      padding-top: 11px;
+      font-size: 16px;
+      width: 100%;
+      background: transparent;
+    }
+
+    &__record-line {
+      width: 100%;
+      bottom: 0;
+      position: relative;
+    }
+
+    &__record-button {
+      height: 56px;
+      margin-top: 10px;
+      background-color: #ccd3da;
+      border-radius: 28px;
+      font-size: 16px;
+    }
+
+    &__error-message {
+      top: 0;
     }
   }
 }
 
 @media (max-width: 480px) {
-  .editing-form {
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
+  .add-form {
+    margin-bottom: 130px;
 
-    &__block-category {
-      width: 360px;
+    &__record {
+      width: calc(100% - 30px);
+      background-color: #ffffff00;
     }
 
-    &__general {
-      width: 400px;
-      height: 281px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 15px;
-      justify-content: center;
+    &__record-block {
+      padding: 0 15px;
+      height: 60px;
+      background-color: #fff;
+      border-radius: 15px;
     }
 
-    &__line-top {
-      display: none;
+    &__record-button {
+      height: 50px;
+    }
+
+    &__error-message {
+      top: 0;
     }
   }
 }
