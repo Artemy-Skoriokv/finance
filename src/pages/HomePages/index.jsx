@@ -1,8 +1,7 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import ExpenseList from "../../components/ExpenseList";
 import Header from "../../components/Header";
-import ExpenseTotal from "../../components/ExpenseTotal";
-import AddForm from "../../components/ExpenseForm";
+import AddForm from "../../components/AddForm/index.jsx";
 import formatDate from "../../helpers/formatDate.js";
 import initialExpenses from "../../constants.js";
 import "./styles.scss";
@@ -12,7 +11,7 @@ const HomePages = () => {
     category: "",
     price: "",
   });
-  
+
   const [errors, setErrors] = useState({
     category: "",
     price: "",
@@ -23,12 +22,6 @@ const HomePages = () => {
   useEffect(() => {
     setExpenses(initialExpenses);
   }, []);
-
-  const totalExpense = useMemo(() => {
-    return expenses.reduce((sum, expense) => {
-      return sum + (Number(expense.price) || 0);
-    }, 0);
-  }, [expenses]);
 
   const addExpense = () => {
     const newExpense = {
@@ -93,7 +86,6 @@ const HomePages = () => {
           handlChangeInput={handlChangeInput}
           validateForm={validateForm}
         />
-        <ExpenseTotal totalExpense={totalExpense} />
         <ExpenseList
           expenses={expenses}
         />
