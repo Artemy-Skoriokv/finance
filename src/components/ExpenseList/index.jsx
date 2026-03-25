@@ -1,16 +1,8 @@
 import Expense from "../Expense";
-import EditingForm from "../EditingForm";
 import "./styles.scss";
 
 const ExpenseList = ({
   expenses,
-  editedExpense,
-  editingErrors,
-  cancelEditingExpense,
-  validateEditingForm,
-  handleChangeEditingForm,
-  openEditingForm,
-  idEditedExpense,
 }) => {
   return (
     <div className="expense-list">
@@ -23,17 +15,7 @@ const ExpenseList = ({
         </div>
         {expenses.map((expense) => (
           <div key={expense.id}>
-            {expense.id === idEditedExpense ? (
-              <EditingForm
-                editedExpense={editedExpense}
-                editingErrors={editingErrors}
-                handleChangeEditingForm={handleChangeEditingForm}
-                validateEditingForm={validateEditingForm}
-                cancelEditingExpense={cancelEditingExpense}
-              />
-            ) : (
-              <Expense expense={expense} openEditingForm={openEditingForm} />
-            )}
+              <Expense expense={expense} />
           </div>
         ))}
       </div>

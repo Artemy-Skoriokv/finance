@@ -12,22 +12,9 @@ const HomePages = () => {
     category: "",
     price: "",
   });
-
-  const [idEditedExpense, setIdEditedExpense] = useState(null);
-  const [editedExpense, setEditedExpense] = useState({
-    category: "",
-    date: "",
-    price: "",
-  });
-
+  
   const [errors, setErrors] = useState({
     category: "",
-    price: "",
-  });
-
-  const [editingErrors, setEditingErrors] = useState({
-    category: "",
-    date: "",
     price: "",
   });
 
@@ -96,106 +83,6 @@ const HomePages = () => {
     }
   };
 
-  const openEditingForm = (expense) => {
-    setIdEditedExpense(expense.id);
-    setEditedExpense({
-      category: expense.category,
-      date: expense.date,
-      price: expense.price,
-    });
-    setEditingErrors({
-      category: "",
-      date: "",
-      price: "",
-    });
-  };
-
-  const cancelEditingExpense = () => {
-    setIdEditedExpense(null);
-    setEditingErrors({
-      category: "",
-      date: "",
-      price: "",
-    });
-  };
-
-  const handleChangeEditingForm = (e) => {
-    const { name, value } = e.target;
-    setEditedExpense((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    if (editingErrors[name]) {
-      setEditingErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }));
-    }
-  };
-
-  const validateEditingForm = () => {
-    setEditingErrors({
-      category: "",
-      date: "",
-      price: "",
-    });
-
-    if (!editedExpense.category.trim()) {
-      setEditingErrors({
-        ...errors,
-        category: "Поле не должно быть пустым",
-      });
-      return;
-    }
-
-    if (!editedExpense.date.trim()) {
-      setEditingErrors({
-        ...errors,
-        date: "Поле не должно быть пустым",
-      });
-      return;
-    }
-
-    if (
-      !editedExpense.price.trim() ||
-      Number(editedExpense.price.trim()) <= 0
-    ) {
-      setEditingErrors({
-        ...errors,
-        price: "Поле не должно быть пустым",
-      });
-      return;
-    }
-
-    updateExpense();
-  };
-
-  const updateExpenseInList = (expensesList, editedId, updatedExpenseData) => {
-    const index = expensesList.findIndex(
-      (expenseItem) => expenseItem.id === editedId,
-    );
-
-    if (index === -1) return expensesList;
-
-    const newExpenses = [...expensesList];
-    newExpenses[index] = {
-      ...newExpenses[index],
-      category: updatedExpenseData.category.trim(),
-      date: updatedExpenseData.date.trim(),
-      price: updatedExpenseData.price.trim(),
-    };
-
-    return newExpenses;
-  };
-
-  const updateExpense = () => {
-    setExpenses((prev) =>
-      updateExpenseInList(prev, idEditedExpense, editedExpense),
-    );
-    cancelEditingExpense();
-  };
-
   return (
     <div className="home">
       <Header />
@@ -209,13 +96,6 @@ const HomePages = () => {
         <ExpenseTotal totalExpense={totalExpense} />
         <ExpenseList
           expenses={expenses}
-          idEditedExpense={idEditedExpense}
-          editedExpense={editedExpense}
-          editingErrors={editingErrors}
-          openEditingForm={openEditingForm}
-          cancelEditingExpense={cancelEditingExpense}
-          handleChangeEditingForm={handleChangeEditingForm}
-          validateEditingForm={validateEditingForm}
         />
       </main>
     </div>
